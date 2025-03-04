@@ -1,0 +1,16 @@
+<script>
+  var x = new XMLHttpRequest();
+  x.open("GET", "https://www.tcmb.gov.tr/kurlar/today.xml", true);
+  x.onreadystatechange = function () {
+    if (x.readyState == 4 && x.status == 200)
+    {
+      var doc = x.responseXML;
+      documents.getElementById('kur').innerHTML = doc;
+    }
+  };
+  x.send(null);
+</script>
+
+<body>
+<div id='kur'></div>
+</body>
